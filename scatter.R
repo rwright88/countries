@@ -12,13 +12,21 @@ plot_xy <- function(df, x, y) {
   df %>% 
     filter(!is.na(!!x), !is.na(!!y)) %>% 
     ggplot(aes(!!x, !!y)) +
-    geom_point(size = 2, color = "#1f77b4") + 
+    geom_point(aes(size = population), show.legend = FALSE, color = "#1f77b4", alpha = 0.8) + 
     geom_smooth(method = "lm", size = 1.1, color = "#1f77b4", alpha = 0.2) + 
-    geom_text(aes(label = str_sub(country_name, 1, 3)), size = 3.5, hjust = 0, vjust = 0) +
+    geom_text(aes(label = str_sub(country_name, 1, 3)), size = 3, hjust = 0, vjust = 0) +
+    # ggrepel::geom_text_repel(aes(label = str_sub(country_name, 1, 3)), size = 3) +
     scale_x_log10() + 
     scale_y_log10() + 
+    scale_size_continuous(range = c(1, 20)) +
     theme_bw()
 }
+
+# population vs income ----------------------------------------------------
+
+combined %>% 
+  filter(year == 2017, population >= 1e6) %>% 
+  plot_xy("population", "pc_eks")
 
 # population vs companies -------------------------------------------------
 
@@ -37,3 +45,10 @@ combined %>%
 combined %>% 
   filter(year == 2017, population >= 1e6) %>% 
   plot_xy("population", "market_cap")
+
+# income vs companies -----------------------------------------------------
+
+combined %>% 
+  filter(year == 2017, population >= 1e6, !str_detect(country_name, "venez")) %>% 
+  mutate(pp = market_cap / population) %>% 
+  plot_xy("pc_eks", "pp")

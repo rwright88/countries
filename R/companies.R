@@ -2,7 +2,7 @@
 
 cr_companies <- function(file, file_cw) {
   raw <- read_csv(file, col_types = "ccccccc")
-  cw_countries <- read_csv(file_cw, col_types = "ccc")
+  cw_countries <- read_csv(file_cw, col_types = "cccc")
   
   cleaned <- raw %>% 
     mutate_if(is.character, str_to_lower) %>% 

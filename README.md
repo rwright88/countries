@@ -15,12 +15,12 @@ Country datasets
 
 Dataset      | Source
 -------------|-------
-demographics | UN
-companies    | https://www.forbes.com/global2000/list/
+demographics | [UN](https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2017_TotalPopulationBySex.csv)
+income       | [Conference Board](https://www.conference-board.org/retrievefile.cfm?filename=TED_FLATFILE_ORI_MAR20181.txt&type=subsite)
+companies    | [Forbes](https://www.forbes.com/global2000/list/)
 
 ### To do
 
-- income (source: ted)
 - employment
 - life expectancy
 - migration

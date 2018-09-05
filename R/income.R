@@ -1,7 +1,8 @@
 # Functions to create the income dataset ----------------------------------
 
-cr_income <- function(file) {
+cr_income <- function(file, file_cw) {
   raw <- read_tsv(file_inc, col_types = "cccccccid")
+  cw_countries <- read_csv(file_cw, col_types = "cccc")
   
   inds <- c("emp", "avghr", "pc_eks", "lp_eksl", "lp_eksh")
   
@@ -12,7 +13,8 @@ cr_income <- function(file) {
     select(country_iso, country_name = country, year, indicator_short, value) %>% 
     spread(indicator_short, value) %>% 
     mutate(emp = emp * 1e3) %>% 
-    select(country_iso, country_name, year, inds)
+    left_join(cw_countries, by = c("country_name" = "name_ted")) %>% 
+    select(country_name = name_custom, year, inds)
   
   cleaned
 }
