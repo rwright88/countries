@@ -11,14 +11,16 @@ source("r/income.R")
 source("r/companies.R")
 source("r/migration.R")
 
-file_cw   <- "data/cw-countries-2.csv"
-file_non  <- "data/non-countries.csv"
+file_cw   <- "data-raw/cw-countries-2.csv"
+file_non  <- "data-raw/non-countries.csv"
 file_demo <- "https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2017_TotalPopulationBySex.csv"
 file_inc  <- "https://www.conference-board.org/retrievefile.cfm?filename=TED_FLATFILE_ORI_MAR20181.txt&type=subsite"
-file_comp <- "data/global-2000.csv"
-file_migr <- "data/UN_MigrantStockByOriginAndDestination_2017.xlsx"
+file_comp <- "data-raw/global-2000.csv"
+file_migr <- "data-raw/UN_MigrantStockByOriginAndDestination_2017.xlsx"
 
 # create ------------------------------------------------------------------
+
+cw_countries <- 
 
 # demographics <- cr_demog(file_demo, file_non)
 demographics <- read_rds("data/demographics.rds")  # temp ~~~~~
