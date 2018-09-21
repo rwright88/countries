@@ -1,9 +1,8 @@
 # Functions to create demographics dataset --------------------------------
 
-cr_demog <- function(file, file_non) {
+cr_demog <- function(file, file_non_cou) {
   raw <- read_csv(file, col_types = "icicidddd")
-  
-  non_countries <- read_csv(file_non, col_types = "ic") %>% 
+  non_countries <- read_csv(file_non_cou, col_types = "ic") %>% 
     .[["iso_code"]]
   
   demographics <- raw %>% 
