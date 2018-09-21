@@ -1,9 +1,8 @@
 # Functions to create companies dataset -----------------------------------
 
-cr_companies <- function(file, file_cw) {
+cr_companies <- function(file, cw_countries) {
   raw <- read_csv(file, col_types = "ccccccc")
-  cw_countries <- read_csv(file_cw, col_types = "cccc")
-  
+    
   cleaned <- raw %>% 
     mutate_if(is.character, str_to_lower) %>% 
     mutate_at(vars(sales:market_cap), fix_dollars) %>% 

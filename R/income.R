@@ -1,10 +1,9 @@
 # Functions to create the income dataset ----------------------------------
 
-cr_income <- function(file, file_cw) {
+cr_income <- function(file, cw_countries) {
   raw <- read_tsv(file, col_types = "cccccccid")
-  cw_countries <- read_csv(file_cw, col_types = "cccc")
-  
-  inds <- c("emp", "avghr", "pc_eks", "lp_eksl", "lp_eksh")
+  inds <- c("emp", "pc_eks", "lp_eksl")
+  renamed <- c("employed", "gdppc", "")
   
   cleaned <- raw %>% 
     rename_all(str_to_lower) %>% 
