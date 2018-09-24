@@ -24,11 +24,7 @@ companies    | [Forbes](https://www.forbes.com/global2000/list/)
 
 ### To do
 
-Create better crosswalk with:
-
-https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/all/all.csv
-
 Add datasets:
 
-- employment
+- employment rates
 - life expectancy

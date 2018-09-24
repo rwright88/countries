@@ -1,0 +1,255 @@
+name_iso,code2_iso,code3_iso,code_iso,region,sub_region,name_un,name_forbes,name_ted
+afghanistan,af,afg,004,asia,southern asia,afghanistan,NA,NA
+åland islands,ax,ala,248,europe,northern europe,NA,NA,NA
+albania,al,alb,008,europe,southern europe,albania,NA,albania
+algeria,dz,dza,012,africa,northern africa,algeria,NA,algeria
+american samoa,as,asm,016,oceania,polynesia,american samoa,NA,NA
+andorra,ad,and,020,europe,southern europe,andorra,NA,NA
+angola,ao,ago,024,africa,sub-saharan africa,angola,NA,angola
+anguilla,ai,aia,660,americas,latin america and the caribbean,anguilla,NA,NA
+antarctica,aq,ata,010,NA,NA,NA,NA,NA
+antigua and barbuda,ag,atg,028,americas,latin america and the caribbean,antigua and barbuda,NA,NA
+argentina,ar,arg,032,americas,latin america and the caribbean,argentina,argentina,argentina
+armenia,am,arm,051,asia,western asia,armenia,NA,armenia
+aruba,aw,abw,533,americas,latin america and the caribbean,aruba,NA,NA
+australia,au,aus,036,oceania,australia and new zealand,australia,australia,australia
+austria,at,aut,040,europe,western europe,austria,austria,austria
+azerbaijan,az,aze,031,asia,western asia,azerbaijan,NA,azerbaijan
+bahamas,bs,bhs,044,americas,latin america and the caribbean,bahamas,NA,NA
+bahrain,bh,bhr,048,asia,western asia,bahrain,bahrain,bahrain
+bangladesh,bd,bgd,050,asia,southern asia,bangladesh,NA,bangladesh
+barbados,bb,brb,052,americas,latin america and the caribbean,barbados,NA,barbados
+belarus,by,blr,112,europe,eastern europe,belarus,NA,belarus
+belgium,be,bel,056,europe,western europe,belgium,belgium,belgium
+belize,bz,blz,084,americas,latin america and the caribbean,belize,NA,NA
+benin,bj,ben,204,africa,sub-saharan africa,benin,NA,NA
+bermuda,bm,bmu,060,americas,northern america,bermuda,bermuda,NA
+bhutan,bt,btn,064,asia,southern asia,bhutan,NA,NA
+bolivia (plurinational state of),bo,bol,068,americas,latin america and the caribbean,bolivia (plurinational state of),NA,bolivia
+"bonaire, sint eustatius and saba",bq,bes,535,americas,latin america and the caribbean,NA,NA,NA
+bosnia and herzegovina,ba,bih,070,europe,southern europe,bosnia and herzegovina,NA,bosnia & herzegovina
+botswana,bw,bwa,072,africa,sub-saharan africa,botswana,NA,NA
+bouvet island,bv,bvt,074,americas,latin america and the caribbean,NA,NA,NA
+brazil,br,bra,076,americas,latin america and the caribbean,brazil,brazil,brazil
+british indian ocean territory,io,iot,086,africa,sub-saharan africa,NA,NA,NA
+brunei darussalam,bn,brn,096,asia,south-eastern asia,brunei darussalam,NA,NA
+bulgaria,bg,bgr,100,europe,eastern europe,bulgaria,NA,bulgaria
+burkina faso,bf,bfa,854,africa,sub-saharan africa,burkina faso,NA,burkina faso
+burundi,bi,bdi,108,africa,sub-saharan africa,burundi,NA,NA
+cabo verde,cv,cpv,132,africa,sub-saharan africa,cabo verde,NA,NA
+cambodia,kh,khm,116,asia,south-eastern asia,cambodia,NA,cambodia
+cameroon,cm,cmr,120,africa,sub-saharan africa,cameroon,NA,cameroon
+canada,ca,can,124,americas,northern america,canada,canada,canada
+caribbean netherlands,NA,NA,NA,NA,NA,caribbean netherlands,NA,NA
+cayman islands,ky,cym,136,americas,latin america and the caribbean,cayman islands,NA,NA
+central african republic,cf,caf,140,africa,sub-saharan africa,central african republic,NA,NA
+chad,td,tcd,148,africa,sub-saharan africa,chad,NA,NA
+channel islands,NA,NA,NA,NA,NA,channel islands,NA,NA
+chile,cl,chl,152,americas,latin america and the caribbean,chile,chile,chile
+china,cn,chn,156,asia,eastern asia,china,china,china (alternative)
+christmas island,cx,cxr,162,oceania,australia and new zealand,NA,NA,NA
+cocos (keeling) islands,cc,cck,166,oceania,australia and new zealand,NA,NA,NA
+colombia,co,col,170,americas,latin america and the caribbean,colombia,colombia,colombia
+comoros,km,com,174,africa,sub-saharan africa,comoros,NA,NA
+congo,cg,cog,178,africa,sub-saharan africa,congo,NA,NA
+congo (democratic republic of the),cd,cod,180,africa,sub-saharan africa,emocratic republic of the congo,NA,dr congo
+cook islands,ck,cok,184,oceania,polynesia,cook islands,NA,NA
+costa rica,cr,cri,188,americas,latin america and the caribbean,costa rica,NA,costa rica
+côte d'ivoire,ci,civ,384,africa,sub-saharan africa,côte d'ivoire,NA,c?te d'ivoire
+croatia,hr,hrv,191,europe,southern europe,croatia,NA,croatia
+cuba,cu,cub,192,americas,latin america and the caribbean,cuba,NA,NA
+curaçao,cw,cuw,531,americas,latin america and the caribbean,curaçao,NA,NA
+cyprus,cy,cyp,196,asia,western asia,cyprus,cyprus,cyprus
+czechia,cz,cze,203,europe,eastern europe,czechia,czech republic,czech republic
+denmark,dk,dnk,208,europe,northern europe,denmark,denmark,denmark
+djibouti,dj,dji,262,africa,sub-saharan africa,djibouti,NA,NA
+dominica,dm,dma,212,americas,latin america and the caribbean,dominica,NA,NA
+dominican republic,do,dom,214,americas,latin america and the caribbean,dominican republic,NA,dominican republic
+ecuador,ec,ecu,218,americas,latin america and the caribbean,ecuador,NA,ecuador
+egypt,eg,egy,818,africa,northern africa,egypt,NA,egypt
+el salvador,sv,slv,222,americas,latin america and the caribbean,el salvador,NA,NA
+equatorial guinea,gq,gnq,226,africa,sub-saharan africa,equatorial guinea,NA,NA
+eritrea,er,eri,232,africa,sub-saharan africa,eritrea,NA,NA
+estonia,ee,est,233,europe,northern europe,estonia,NA,estonia
+eswatini,sz,swz,748,africa,sub-saharan africa,NA,NA,NA
+ethiopia,et,eth,231,africa,sub-saharan africa,ethiopia,NA,ethiopia
+faeroe islands,NA,NA,NA,NA,NA,faeroe islands,NA,NA
+falkland islands (malvinas),fk,flk,238,americas,latin america and the caribbean,falkland islands (malvinas),NA,NA
+faroe islands,fo,fro,234,europe,northern europe,NA,NA,NA
+fiji,fj,fji,242,oceania,melanesia,fiji,NA,NA
+finland,fi,fin,246,europe,northern europe,finland,finland,finland
+france,fr,fra,250,europe,western europe,france,france,france
+french guiana,gf,guf,254,americas,latin america and the caribbean,french guiana,NA,NA
+french polynesia,pf,pyf,258,oceania,polynesia,french polynesia,NA,NA
+french southern territories,tf,atf,260,africa,sub-saharan africa,NA,NA,NA
+gabon,ga,gab,266,africa,sub-saharan africa,gabon,NA,NA
+gambia,gm,gmb,270,africa,sub-saharan africa,gambia,NA,NA
+georgia,ge,geo,268,asia,western asia,georgia,NA,georgia
+germany,de,deu,276,europe,western europe,germany,germany,germany
+ghana,gh,gha,288,africa,sub-saharan africa,ghana,NA,ghana
+gibraltar,gi,gib,292,europe,southern europe,gibraltar,NA,NA
+greece,gr,grc,300,europe,southern europe,greece,greece,greece
+greenland,gl,grl,304,americas,northern america,greenland,NA,NA
+grenada,gd,grd,308,americas,latin america and the caribbean,grenada,NA,NA
+guadeloupe,gp,glp,312,americas,latin america and the caribbean,guadeloupe,NA,NA
+guam,gu,gum,316,oceania,micronesia,guam,NA,NA
+guatemala,gt,gtm,320,americas,latin america and the caribbean,guatemala,NA,guatemala
+guernsey,gg,ggy,831,europe,northern europe,NA,NA,NA
+guinea,gn,gin,324,africa,sub-saharan africa,guinea,NA,NA
+guinea-bissau,gw,gnb,624,africa,sub-saharan africa,guinea-bissau,NA,NA
+guyana,gy,guy,328,americas,latin america and the caribbean,guyana,NA,NA
+haiti,ht,hti,332,americas,latin america and the caribbean,haiti,NA,NA
+heard island and mcdonald islands,hm,hmd,334,oceania,australia and new zealand,NA,NA,NA
+holy see,va,vat,336,europe,southern europe,holy see,NA,NA
+honduras,hn,hnd,340,americas,latin america and the caribbean,honduras,NA,NA
+hong kong,hk,hkg,344,asia,eastern asia,"china, hong kong sar",hong kong,hong kong
+hungary,hu,hun,348,europe,eastern europe,hungary,hungary,hungary
+iceland,is,isl,352,europe,northern europe,iceland,NA,iceland
+india,in,ind,356,asia,southern asia,india,india,india
+indonesia,id,idn,360,asia,south-eastern asia,indonesia,indonesia,indonesia
+iran (islamic republic of),ir,irn,364,asia,southern asia,iran (islamic republic of),NA,iran
+iraq,iq,irq,368,asia,western asia,iraq,NA,iraq
+ireland,ie,irl,372,europe,northern europe,ireland,ireland,ireland
+isle of man,im,imn,833,europe,northern europe,isle of man,NA,NA
+israel,il,isr,376,asia,western asia,israel,israel,israel
+italy,it,ita,380,europe,southern europe,italy,italy,italy
+jamaica,jm,jam,388,americas,latin america and the caribbean,jamaica,NA,jamaica
+japan,jp,jpn,392,asia,eastern asia,japan,japan,japan
+jersey,je,jey,832,europe,northern europe,NA,NA,NA
+jordan,jo,jor,400,asia,western asia,jordan,jordan,jordan
+kazakhstan,kz,kaz,398,asia,central asia,kazakhstan,kazakhstan,kazakhstan
+kenya,ke,ken,404,africa,sub-saharan africa,kenya,kenya,kenya
+kiribati,ki,kir,296,oceania,micronesia,kiribati,NA,NA
+korea (democratic people's republic of),kp,prk,408,asia,eastern asia,dem. people's republic of korea,NA,NA
+korea (republic of),kr,kor,410,asia,eastern asia,republic of korea,south korea,south korea
+kuwait,kw,kwt,414,asia,western asia,kuwait,kuwait,kuwait
+kyrgyzstan,kg,kgz,417,asia,central asia,kyrgyzstan,NA,kyrgyz republic
+lao people's democratic republic,la,lao,418,asia,south-eastern asia,lao people's democratic republic,NA,NA
+latvia,lv,lva,428,europe,northern europe,latvia,NA,latvia
+lebanon,lb,lbn,422,asia,western asia,lebanon,lebanon,NA
+lesotho,ls,lso,426,africa,sub-saharan africa,lesotho,NA,NA
+liberia,lr,lbr,430,africa,sub-saharan africa,liberia,NA,NA
+libya,ly,lby,434,africa,northern africa,libya,NA,NA
+liechtenstein,li,lie,438,europe,western europe,liechtenstein,NA,NA
+lithuania,lt,ltu,440,europe,northern europe,lithuania,NA,lithuania
+luxembourg,lu,lux,442,europe,western europe,luxembourg,luxembourg,luxembourg
+macao,mo,mac,446,asia,eastern asia,"china, macao sar",NA,NA
+macedonia (the former yugoslav republic of),mk,mkd,807,europe,southern europe,tfyr macedonia,NA,macedonia
+madagascar,mg,mdg,450,africa,sub-saharan africa,madagascar,NA,madagascar
+malawi,mw,mwi,454,africa,sub-saharan africa,malawi,NA,malawi
+malaysia,my,mys,458,asia,south-eastern asia,malaysia,malaysia,malaysia
+maldives,mv,mdv,462,asia,southern asia,maldives,NA,NA
+mali,ml,mli,466,africa,sub-saharan africa,mali,NA,mali
+malta,mt,mlt,470,europe,southern europe,malta,NA,malta
+marshall islands,mh,mhl,584,oceania,micronesia,marshall islands,NA,NA
+martinique,mq,mtq,474,americas,latin america and the caribbean,martinique,NA,NA
+mauritania,mr,mrt,478,africa,sub-saharan africa,mauritania,NA,NA
+mauritius,mu,mus,480,africa,sub-saharan africa,mauritius,NA,NA
+mayotte,yt,myt,175,africa,sub-saharan africa,mayotte,NA,NA
+mexico,mx,mex,484,americas,latin america and the caribbean,mexico,mexico,mexico
+micronesia,NA,NA,NA,NA,NA,micronesia,NA,NA
+micronesia (federated states of),fm,fsm,583,oceania,micronesia,micronesia (fed. states of),NA,NA
+moldova (republic of),md,mda,498,europe,eastern europe,republic of moldova,NA,moldova
+monaco,mc,mco,492,europe,western europe,monaco,monaco,NA
+mongolia,mn,mng,496,asia,eastern asia,mongolia,NA,NA
+montenegro,me,mne,499,europe,southern europe,montenegro,NA,NA
+montserrat,ms,msr,500,americas,latin america and the caribbean,montserrat,NA,NA
+morocco,ma,mar,504,africa,northern africa,morocco,morocco,morocco
+mozambique,mz,moz,508,africa,sub-saharan africa,mozambique,NA,mozambique
+myanmar,mm,mmr,104,asia,south-eastern asia,myanmar,NA,myanmar
+namibia,NA,nam,516,africa,sub-saharan africa,namibia,NA,NA
+nauru,nr,nru,520,oceania,micronesia,nauru,NA,NA
+nepal,np,npl,524,asia,southern asia,nepal,NA,NA
+netherlands,nl,nld,528,europe,western europe,netherlands,netherlands,netherlands
+new caledonia,nc,ncl,540,oceania,melanesia,new caledonia,NA,NA
+new zealand,nz,nzl,554,oceania,australia and new zealand,new zealand,NA,new zealand
+nicaragua,ni,nic,558,americas,latin america and the caribbean,nicaragua,NA,NA
+niger,ne,ner,562,africa,sub-saharan africa,niger,NA,niger
+nigeria,ng,nga,566,africa,sub-saharan africa,nigeria,nigeria,nigeria
+niue,nu,niu,570,oceania,polynesia,niue,NA,NA
+norfolk island,nf,nfk,574,oceania,australia and new zealand,NA,NA,NA
+northern mariana islands,mp,mnp,580,oceania,micronesia,northern mariana islands,NA,NA
+norway,no,nor,578,europe,northern europe,norway,norway,norway
+oman,om,omn,512,asia,western asia,oman,oman,oman
+pakistan,pk,pak,586,asia,southern asia,pakistan,NA,pakistan
+palau,pw,plw,585,oceania,micronesia,palau,NA,NA
+"palestine, state of",ps,pse,275,asia,western asia,state of palestine,NA,NA
+panama,pa,pan,591,americas,latin america and the caribbean,panama,NA,NA
+papua new guinea,pg,png,598,oceania,melanesia,papua new guinea,NA,NA
+paraguay,py,pry,600,americas,latin america and the caribbean,paraguay,NA,NA
+peru,pe,per,604,americas,latin america and the caribbean,peru,peru,peru
+philippines,ph,phl,608,asia,south-eastern asia,philippines,philippines,philippines
+pitcairn,pn,pcn,612,oceania,polynesia,NA,NA,NA
+poland,pl,pol,616,europe,eastern europe,poland,poland,poland
+portugal,pt,prt,620,europe,southern europe,portugal,portugal,portugal
+puerto rico,pr,pri,630,americas,latin america and the caribbean,puerto rico,puerto rico,NA
+qatar,qa,qat,634,asia,western asia,qatar,qatar,qatar
+réunion,re,reu,638,africa,sub-saharan africa,NA,NA,NA
+romania,ro,rou,642,europe,eastern europe,romania,NA,romania
+russian federation,ru,rus,643,europe,eastern europe,russian federation,russia,russian federation
+rwanda,rw,rwa,646,africa,sub-saharan africa,rwanda,NA,NA
+saint barthélemy,bl,blm,652,americas,latin america and the caribbean,NA,NA,NA
+"saint helena, ascension and tristan da cunha",sh,shn,654,africa,sub-saharan africa,saint helena,NA,NA
+saint kitts and nevis,kn,kna,659,americas,latin america and the caribbean,saint kitts and nevis,NA,NA
+saint lucia,lc,lca,662,americas,latin america and the caribbean,saint lucia,NA,st. lucia
+saint martin (french part),mf,maf,663,americas,latin america and the caribbean,NA,NA,NA
+saint pierre and miquelon,pm,spm,666,americas,northern america,saint pierre and miquelon,NA,NA
+saint vincent and the grenadines,vc,vct,670,americas,latin america and the caribbean,saint vincent and the grenadines,NA,NA
+samoa,ws,wsm,882,oceania,polynesia,samoa,NA,NA
+san marino,sm,smr,674,europe,southern europe,san marino,NA,NA
+sao tome and principe,st,stp,678,africa,sub-saharan africa,sao tome and principe,NA,NA
+saudi arabia,sa,sau,682,asia,western asia,saudi arabia,saudi arabia,saudi arabia
+senegal,sn,sen,686,africa,sub-saharan africa,senegal,NA,senegal
+serbia,rs,srb,688,europe,southern europe,serbia,NA,serbia & montenegro
+seychelles,sc,syc,690,africa,sub-saharan africa,seychelles,NA,NA
+sierra leone,sl,sle,694,africa,sub-saharan africa,sierra leone,NA,NA
+singapore,sg,sgp,702,asia,south-eastern asia,singapore,singapore,singapore
+sint maarten (dutch part),sx,sxm,534,americas,latin america and the caribbean,sint maarten (dutch part),NA,NA
+slovakia,sk,svk,703,europe,eastern europe,slovakia,NA,slovak republic
+slovenia,si,svn,705,europe,southern europe,slovenia,NA,slovenia
+solomon islands,sb,slb,090,oceania,melanesia,solomon islands,NA,NA
+somalia,so,som,706,africa,sub-saharan africa,somalia,NA,NA
+south africa,za,zaf,710,africa,sub-saharan africa,south africa,south africa,south africa
+south georgia and the south sandwich islands,gs,sgs,239,americas,latin america and the caribbean,NA,NA,NA
+south sudan,ss,ssd,728,africa,sub-saharan africa,south sudan,NA,NA
+spain,es,esp,724,europe,southern europe,spain,spain,spain
+sri lanka,lk,lka,144,asia,southern asia,sri lanka,NA,sri lanka
+sudan,sd,sdn,729,africa,northern africa,sudan,NA,sudan
+suriname,sr,sur,740,americas,latin america and the caribbean,suriname,NA,NA
+svalbard and jan mayen,sj,sjm,744,europe,northern europe,NA,NA,NA
+swaziland,NA,NA,NA,NA,NA,swaziland,NA,NA
+sweden,se,swe,752,europe,northern europe,sweden,sweden,sweden
+switzerland,ch,che,756,europe,western europe,switzerland,switzerland,switzerland
+syrian arab republic,sy,syr,760,asia,western asia,syrian arab republic,NA,syria
+"taiwan, province of china",tw,twn,158,asia,eastern asia,"china, taiwan province of china",taiwan,taiwan
+tajikistan,tj,tjk,762,asia,central asia,tajikistan,NA,tajikistan
+"tanzania, united republic of",tz,tza,834,africa,sub-saharan africa,united republic of tanzania,NA,tanzania
+thailand,th,tha,764,asia,south-eastern asia,thailand,thailand,thailand
+timor-leste,tl,tls,626,asia,south-eastern asia,timor-leste,NA,NA
+togo,tg,tgo,768,africa,sub-saharan africa,togo,NA,NA
+tokelau,tk,tkl,772,oceania,polynesia,tokelau,NA,NA
+tonga,to,ton,776,oceania,polynesia,tonga,NA,NA
+trinidad and tobago,tt,tto,780,americas,latin america and the caribbean,trinidad and tobago,NA,trinidad & tobago
+tunisia,tn,tun,788,africa,northern africa,tunisia,NA,tunisia
+turkey,tr,tur,792,asia,western asia,turkey,turkey,turkey
+turkmenistan,tm,tkm,795,asia,central asia,turkmenistan,NA,turkmenistan
+turks and caicos islands,tc,tca,796,americas,latin america and the caribbean,turks and caicos islands,NA,NA
+tuvalu,tv,tuv,798,oceania,polynesia,tuvalu,NA,NA
+uganda,ug,uga,800,africa,sub-saharan africa,uganda,NA,uganda
+ukraine,ua,ukr,804,europe,eastern europe,ukraine,NA,ukraine
+united arab emirates,ae,are,784,asia,western asia,united arab emirates,united arab emirates,united arab emirates
+united kingdom of great britain and northern ireland,gb,gbr,826,europe,northern europe,united kingdom,united kingdom,united kingdom
+united states minor outlying islands,um,umi,581,oceania,micronesia,NA,NA,NA
+united states of america,us,usa,840,americas,northern america,united states of america,united states,united states
+uruguay,uy,ury,858,americas,latin america and the caribbean,uruguay,NA,uruguay
+uzbekistan,uz,uzb,860,asia,central asia,uzbekistan,NA,uzbekistan
+vanuatu,vu,vut,548,oceania,melanesia,vanuatu,NA,NA
+venezuela (bolivarian republic of),ve,ven,862,americas,latin america and the caribbean,venezuela (bolivarian republic of),venezuela,venezuela
+viet nam,vn,vnm,704,asia,south-eastern asia,viet nam,vietnam,vietnam
+virgin islands (british),vg,vgb,092,americas,latin america and the caribbean,british virgin islands,NA,NA
+virgin islands (u.s.),vi,vir,850,americas,latin america and the caribbean,united states virgin islands,NA,NA
+wallis and futuna,wf,wlf,876,oceania,polynesia,wallis and futuna islands,NA,NA
+western sahara,eh,esh,732,africa,northern africa,western sahara,NA,NA
+yemen,ye,yem,887,asia,western asia,yemen,NA,yemen
+zambia,zm,zmb,894,africa,sub-saharan africa,zambia,NA,zambia
+zimbabwe,zw,zwe,716,africa,sub-saharan africa,zimbabwe,NA,zimbabwe

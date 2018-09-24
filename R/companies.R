@@ -3,14 +3,18 @@
 cr_companies <- function(file, cw_countries) {
   raw <- read_csv(file, col_types = "ccccccc")
     
-  cleaned <- raw %>% 
+  companies <- raw %>% 
     mutate_if(is.character, str_to_lower) %>% 
     mutate_at(vars(sales:market_cap), fix_dollars) %>% 
     left_join(cw_countries, by = c("country_name" = "name_forbes")) %>% 
-    select(country_name = name_custom, sales:market_cap)
+    select(
+      country_code = code3_iso,
+      country_name = name_iso,
+      sales:market_cap
+    )
   
-  country_sums <- cleaned %>% 
-    group_by(country_name) %>% 
+  country_sums <- companies %>% 
+    group_by(country_code, country_name) %>% 
     summarise(
       year = 2017L,
       companies = n(),
