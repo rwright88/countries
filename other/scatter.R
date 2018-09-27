@@ -9,10 +9,16 @@ file1 <- "data/combined.rds"
 combined <- read_rds(file1) %>% 
   mutate(migrants_pp = migrant_stock / population)
 
-calc_aapc <- function(df, x, n = 10) {
-  x <- sym(x)
-  df %>% 
-    mutate(aapc = aapc(!!x, n))
+calc_aapc <- function(df, vars, n = 10) {
+  names_aapc <- str_c(vars, "_aapc")
+  n_rows <- nrow(df)
+  df[names_aapc] <- vector("numeric", n_rows)
+  for (i in seq_along(vars)) {
+    name <- names_aapc[[1]]
+    var <- vars[[1]]
+    df[[name]] <- aapc(df[[var]], n)
+  }
+  df
 }
 
 aapc <- function(x, n) {
@@ -98,5 +104,10 @@ combined %>%
 
 combined %>% 
   calc_aapc("population") %>% 
-  filter(year == 2017, population >= 1e6, aapc < 6) %>% 
-  plot_change("population", "aapc")
+  filter(year == 2017, population >= 1e6, population_aapc < 6) %>% 
+  plot_change("population", "population_aapc")
+
+combined %>% 
+  calc_aapc("gdppc") %>% 
+  filter(year == 2017, population >= 1e6) %>% 
+  plot_change("gdppc", "gdppc_aapc")
