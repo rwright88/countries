@@ -19,6 +19,10 @@ gdppc_subreg <- combined %>%
   ) %>% 
   ungroup()
 
+gdppc_subreg %>% 
+  filter(year == max(year)) %>% 
+  arrange(desc(pop))
+
 order_subreg <- gdppc_subreg %>% 
   filter(year == max(year)) %>% 
   arrange(desc(gdppc)) %>% 
