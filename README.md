@@ -21,6 +21,7 @@ demographics | [UN](https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standa
 income       | [Conference Board](https://www.conference-board.org/retrievefile.cfm?filename=TED_FLATFILE_ORI_MAR20181.txt&type=subsite)
 migration    | [UN](https://www.un.org/en/development/desa/population/migration/data/estimates2/estimates17.shtml)
 companies    | [Forbes](https://www.forbes.com/global2000/list/)
+obesity      | [WHO](https://ourworldindata.org/obesity)
 
 ### To do
 
