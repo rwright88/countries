@@ -92,6 +92,11 @@ combined %>%
   plot_current("population", "market_cap_pp")
 
 combined %>% 
+  filter(year == 2016, population >= 1e6) %>% 
+  plot_current("population", "obesity_rate") +
+  scale_y_continuous(limits = c(0, NA))
+
+combined %>% 
   filter(year == 2017, population >= 1e6) %>% 
   plot_current("gdppc", "migrants_pp")
 
@@ -103,6 +108,11 @@ combined %>%
   filter(year == 2017, population >= 1e6, country_code != "ven") %>% 
   mutate(market_cap_pp = market_cap / population) %>% 
   plot_current("gdppc", "market_cap_pp")
+
+combined %>% 
+  filter(year == 2016, population >= 1e6) %>% 
+  plot_current("gdppc", "obesity_rate") +
+  scale_y_continuous(limits = c(0, NA))
 
 # plot changes ------------------------------------------------------------
 
