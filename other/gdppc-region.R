@@ -34,5 +34,5 @@ gdppc_subreg %>%
   geom_line(size = 1.1, color = "#1f77b4") +
   scale_y_log10(labels = scales::trans_format("log10", scales::math_format(10^.x))) +
   coord_cartesian(ylim = c(1e3, 1e5)) +
-  facet_wrap(~sub_region) +
+  facet_wrap(~sub_region, ncol = 5) +
   theme_bw()

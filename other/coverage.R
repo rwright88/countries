@@ -22,5 +22,5 @@ coverage_subreg %>%
   filter(year <= 2018, !sub_region %in% c("melanesia", "polynesia", "micronesia")) %>% 
   ggplot(aes(year, cov_ratio)) +
   geom_line(size = 1.1, color = "#1f77b4") +
-  facet_wrap(~sub_region) +
+  facet_wrap(~sub_region, ncol = 5) +
   theme_bw()
