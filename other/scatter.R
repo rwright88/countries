@@ -25,14 +25,19 @@ aapc <- function(x, n) {
   ((x / lag(x, n)) ^ (1 / n) - 1) * 100
 }
 
-# data available ----------------------------------------------------------
+# data coverage -----------------------------------------------------------
 
-avail <- combined %>% 
+calc_coverage <- function(x, pop) {
+  sum(pop[!is.na(x)]) / sum(pop)
+}
+
+coverage <- combined %>% 
   group_by(year) %>% 
   summarise(
-    gdppc_avail = sum(population[!is.na(gdppc)] / sum(population)),
-    migrants_avail = sum(population[!is.na(migrant_stock)] / sum(population)),
-    companies_avail = sum(population[!is.na(companies)] / sum(population))
+    gdppc_cov = calc_coverage(gdppc, population),
+    migrants_cov = calc_coverage(migrant_stock, population),
+    companies_cov = calc_coverage(companies, population),
+    obesity_cov = calc_coverage(obesity_rate, population)
   )
 
 # setup -------------------------------------------------------------------
