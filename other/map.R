@@ -13,6 +13,7 @@ cw_countries <- read_csv("../countries/data-raw/cw-countries3.csv") %>%
 
 combined <- read_rds(file1) %>%
   mutate(migrants_pp = migrant_stock / population) %>% 
+  mutate(market_cap_pp = market_cap / population) %>% 
   left_join(cw_countries, by = c("country_code" = "code3_iso"))
 
 names_world <- names(world)
@@ -30,18 +31,21 @@ world_robin <- world %>%
 
 # plot --------------------------------------------------------------------
 
-map_world <- function(x, year1, .data = combined, world = world_robin) {
+map_world <- function(.data, x, year1, limits, world = world_robin) {
   x <- sym(x)
   dat <- filter(.data, year == year1)
-  
-  world_data <- world %>% 
-    left_join(dat, by = c("iso_a2" = "code2_iso"))
-  
-  colors <- RColorBrewer::brewer.pal(11, "RdYlBu")
+  dat[[x]][dat[[x]] < limits[[1]]] <- limits[[1]]
+  dat[[x]][dat[[x]] > limits[[3]]] <- limits[[3]]
+  world_data <- left_join(world, dat, by = c("iso_a2" = "code2_iso"))
   
   ggplot(world_data) +
     geom_sf(aes(fill = !!x), size = 0.1, color = "#444444") +
-    scale_fill_gradientn(colors = colors, trans = "log", limits = c(0.0005, 0.9)) +
+    scale_fill_gradientn(
+      trans = "log",
+      limits = limits[c(1, 3)],
+      breaks = limits,
+      colors = RColorBrewer::brewer.pal(9, "RdBu")
+    ) +
     coord_sf(ylim = c(-5.5e6, 8e6)) +
     theme(
       axis.text = element_blank(),
@@ -50,6 +54,12 @@ map_world <- function(x, year1, .data = combined, world = world_robin) {
     )
 }
 
-map_world("migrants_pp", 2017L)
+filter(combined, year == 2017, !is.na(market_cap_pp)) %>% 
+  summarise(market_cap_pp = weighted.mean(market_cap_pp, population))
 
-ggsave("world-map.png", dpi = 300, width = 19, height = 9)
+map_world(combined, "gdppc", 2017, c(1e3, 1.4e4, 2e5))
+map_world(combined, "migrants_pp", 2017, c(0.003, 0.03, 0.3))
+map_world(combined, "market_cap_pp", 2017, c(1e3, 1e4, 1e5))
+map_world(combined, "obesity_rate", 2016, c(4, 13, 40))
+
+ggsave("other/test-map.png", dpi = 300, width = 19, height = 9)
