@@ -63,8 +63,8 @@ map_world <- function(.data, x, year1, limits, world = world_robin) {
 
 map_world(combined, "gdppc", 2017, c(3e3, 1.5e4, 7.5e4))
 map_world(combined, "gdppc_wb", 2017, c(3e3, 1.5e4, 7.5e4))
-map_world(combined, "migrants_pp", 2017, c(0.003, 0.03, 0.3))
+map_world(combined, "migrants_pp", 2017, c(0.0034, 0.034, 0.34))
 map_world(combined, "market_cap_pp", 2017, c(1e3, 1e4, 1e5))
 map_world(combined, "obesity_rate", 2016, c(4, 13, 40))
 
-ggsave("other/test-map.png", dpi = 300, width = 19, height = 9)
+ggsave("other/map-obesity-rate.png", dpi = 300, width = 19, height = 9)
