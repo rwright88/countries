@@ -8,10 +8,11 @@ cr_homicides <- function(file, cw_countries) {
     gather("year", "homicides", -country_name) %>% 
     mutate_if(is.character, str_to_lower) %>% 
     mutate(
+      country_name = str_remove_all(country_name, "\\*|\\#"),
       year = as.integer(year),
       homicides = as.numeric(homicides)
     ) %>% 
-    left_join(cw_countries, by = c("country_name" = "name_iso")) %>% 
+    left_join(cw_countries, by = c("country_name" = "name_un")) %>% 
     filter(!is.na(code3_iso)) %>% 
     select(
       country_code = code3_iso,

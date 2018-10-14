@@ -50,9 +50,9 @@ world_robin <- world %>%
 
 # plot --------------------------------------------------------------------
 
-map_world <- function(.data, x, year1, limits, reverse = FALSE, world = world_robin) {
+map_world <- function(dat, x, year1, limits, reverse = FALSE, world = world_robin) {
   x <- sym(x)
-  dat <- filter(.data, year == year1)
+  dat <- filter(dat, year == year1)
   dat[[x]][dat[[x]] < limits[[1]]] <- limits[[1]]
   dat[[x]][dat[[x]] > limits[[3]]] <- limits[[3]]
   world_data <- left_join(world, dat, by = c("iso_a2" = "code2_iso"))
@@ -77,11 +77,19 @@ map_world <- function(.data, x, year1, limits, reverse = FALSE, world = world_ro
     )
 }
 
-map_world(combined, "gdppc", 2017, c(3e3, 1.5e4, 7.5e4))
-map_world(combined, "gdppc_wb", 2017, c(3e3, 1.5e4, 7.5e4))
-map_world(combined, "migrants_pp", 2017, c(0.0034, 0.034, 0.34))
-map_world(combined, "mcap_wb_pp", 2017, c(1.3e3, 1.3e4, 1.3e5))
-map_world(combined, "obesity_rate", 2016, c(4, 13, 40), reverse = TRUE)
-map_world(combined, "homicide_rate", 2015, c(5e-6, 5e-5, 5e-4), reverse = TRUE)
+# map_world(combined, "gdppc", 2017, c(3e3, 1.5e4, 7.5e4))
+# map_world(combined, "gdppc_wb", 2017, c(3e3, 1.5e4, 7.5e4))
+# map_world(combined, "migrants_pp", 2017, c(0.0034, 0.034, 0.34))
+# map_world(combined, "mcap_wb_pp", 2017, c(1.3e3, 1.3e4, 1.3e5))
+# map_world(combined, "obesity_rate", 2016, c(4, 13, 40), reverse = TRUE)
+
+combined %>% 
+  filter(year %in% 2010:2016) %>% 
+  group_by(code2_iso) %>% 
+  summarise(year = 2016, homicide_rate = mean(homicide_rate, na.rm = TRUE)) %>% 
+  ungroup() %>% 
+  map_world("homicide_rate", 2016, c(5e-6, 5e-5, 5e-4), reverse = TRUE)
+
+# map_world(combined, "homicide_rate", 2015, c(5e-6, 5e-5, 5e-4), reverse = TRUE)
 
 # ggsave("other/images/test-map.png", dpi = 300, width = 19, height = 9)
