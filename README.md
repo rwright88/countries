@@ -22,10 +22,19 @@ income       | [Conference Board](https://www.conference-board.org/retrievefile.
 migration    | [UN](https://www.un.org/en/development/desa/population/migration/data/estimates2/estimates17.shtml)
 companies    | [Forbes](https://www.forbes.com/global2000/list/)
 obesity      | [WHO](https://ourworldindata.org/obesity)
+homicides    | [UN](https://dataunodc.un.org/crime/intentional-homicide-victims)
 
 ### To do
 
 Add datasets:
 
-- employment rates
-- life expectancy
+- Employment rates
+- Life expectancy
+
+Change datasets:
+
+- Use index mundi or other for market cap data
+
+Other:
+
+- Add regions and subregions

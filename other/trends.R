@@ -10,9 +10,9 @@ combined <- read_rds(file1)
 
 # setup -------------------------------------------------------------------
 
-plot_trends <- function(.data, x) {
+plot_trends <- function(dat, x) {
   x <- sym(x)
-  .data %>% 
+  dat %>% 
     filter(!is.na(!!x)) %>% 
     mutate(country_code = reorder(country_code, desc(!!x))) %>% 
     ggplot(aes(year, !!x, color = country_code)) +
@@ -25,9 +25,6 @@ plot_trends <- function(.data, x) {
 # plot trends -------------------------------------------------------------
 
 codes <- c("usa", "deu", "gbr", "fra")
-codes <- c("usa", "swe", "dnk", "nor")
-codes <- c("usa", "chn", "jpn", "kor")
-codes <- c("usa", "bra", "mex", "col", "arg")
 
 combined %>% 
   filter(country_code %in% codes, year <= 2018) %>% 
@@ -41,11 +38,15 @@ combined %>%
 
 combined %>% 
   filter(country_code %in% codes) %>% 
-  mutate(migrants_pp = migrant_stock / population) %>% 
   plot_trends("migrants_pp") +
   scale_y_continuous(limits = c(0, NA))
 
 combined %>% 
   filter(country_code %in% codes, population >= 1e6) %>%
   plot_trends("obesity_rate") +
+  scale_y_continuous(limits = c(0, NA))
+
+combined %>% 
+  filter(country_code %in% codes, population >= 1e6) %>%
+  plot_trends("homicide_rate") +
   scale_y_continuous(limits = c(0, NA))
