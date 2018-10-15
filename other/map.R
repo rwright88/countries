@@ -77,11 +77,11 @@ map_world <- function(dat, x, year1, limits, reverse = FALSE, world = world_robi
     )
 }
 
-# map_world(combined, "gdppc", 2017, c(3e3, 1.5e4, 7.5e4))
-# map_world(combined, "gdppc_wb", 2017, c(3e3, 1.5e4, 7.5e4))
-# map_world(combined, "migrants_pp", 2017, c(0.0034, 0.034, 0.34))
-# map_world(combined, "mcap_wb_pp", 2017, c(1.3e3, 1.3e4, 1.3e5))
-# map_world(combined, "obesity_rate", 2016, c(4, 13, 40), reverse = TRUE)
+map_world(combined, "gdppc", 2017, c(3e3, 1.5e4, 7.5e4))
+map_world(combined, "gdppc_wb", 2017, c(3e3, 1.5e4, 7.5e4))
+map_world(combined, "migrants_pp", 2017, c(0.0034, 0.034, 0.34))
+map_world(combined, "mcap_wb_pp", 2017, c(1.3e3, 1.3e4, 1.3e5))
+map_world(combined, "obesity_rate", 2016, c(4, 13, 40), reverse = TRUE)
 
 combined %>% 
   filter(year %in% 2010:2016) %>% 
@@ -90,6 +90,4 @@ combined %>%
   ungroup() %>% 
   map_world("homicide_rate", 2016, c(5e-6, 5e-5, 5e-4), reverse = TRUE)
 
-# map_world(combined, "homicide_rate", 2015, c(5e-6, 5e-5, 5e-4), reverse = TRUE)
-
-# ggsave("other/images/test-map.png", dpi = 300, width = 19, height = 9)
+# ggsave("other/images/map-homicide-rate.png", dpi = 300, width = 19, height = 9)
