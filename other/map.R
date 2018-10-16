@@ -4,9 +4,10 @@ library(tidyverse)
 library(sf)
 library(spData)
 
-file1 <- "data/combined.rds"
+file1     <- "data/combined.rds"
 file_gdwb <- "../other/data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10081045.csv"
 file_mcwb <- "data-raw/API_CM.MKT.LCAP.CD_DS2_en_csv_v2_10143648.csv"
+file_cw   <- "data-raw/cw-countries3.csv"
 
 # gddpc data from world bank ----------------------------------------------
 
@@ -26,7 +27,7 @@ mcap_wb <- suppressMessages(read_csv(file_mcwb, skip = 4)) %>%
 
 # data --------------------------------------------------------------------
 
-cw_countries <- read_csv("../countries/data-raw/cw-countries3.csv") %>% 
+cw_countries <- read_csv(file_cw) %>% 
   select(1, 2, 3)
 
 combined <- read_rds(file1) %>% 

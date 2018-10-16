@@ -16,7 +16,7 @@ plot_trends <- function(dat, x) {
     filter(!is.na(!!x)) %>% 
     mutate(country_code = reorder(country_code, desc(!!x))) %>% 
     ggplot(aes(year, !!x, color = country_code)) +
-    geom_point(size = 2) +
+    # geom_point(size = 2) +
     geom_line(size = 1.1) +
     scale_color_brewer(type = "qual", palette = "Set1") +
     theme_bw()
@@ -24,7 +24,7 @@ plot_trends <- function(dat, x) {
 
 # plot trends -------------------------------------------------------------
 
-codes <- c("usa", "deu", "gbr", "fra")
+codes <- c("usa", "chn", "jpn", "deu")
 
 combined %>% 
   filter(country_code %in% codes, year <= 2018) %>% 

@@ -2,11 +2,34 @@
 
 library(tidyverse)
 
-file1 <- "data/combined.rds"
+file1     <- "data/combined.rds"
+file_gdwb <- "../other/data/API_NY.GDP.PCAP.PP.CD_DS2_en_csv_v2_10081045.csv"
+file_mcwb <- "data-raw/API_CM.MKT.LCAP.CD_DS2_en_csv_v2_10143648.csv"
+file_cw   <- "data-raw/cw-countries3.csv"
 
-# read --------------------------------------------------------------------
+# data --------------------------------------------------------------------
 
-combined <- read_rds(file1)
+cw_region <- read_csv(file_cw, col_types = "ccccccccc") %>% 
+  select(code3_iso, region, sub_region)
+
+gdppc_wb <- suppressMessages(read_csv(file_gdwb, skip = 4)) %>% 
+  select(2, (length(.) - 1)) %>% 
+  mutate_if(is.character, str_to_lower) %>% 
+  set_names(c("code3_iso", "gdppc_wb")) %>% 
+  mutate(year = 2017L)
+
+mcap_wb <- suppressMessages(read_csv(file_mcwb, skip = 4)) %>% 
+  select(2, 5:(length(.) - 1)) %>% 
+  gather("year", "mcap_wb", -1, convert = TRUE) %>% 
+  set_names(c("code3_iso", "year", "mcap_wb")) %>% 
+  mutate_if(is.character, str_to_lower) %>% 
+  mutate(mcap_wb = as.numeric(mcap_wb))
+
+combined <- read_rds(file1) %>% 
+  left_join(gdppc_wb, by = c("country_code" = "code3_iso", "year")) %>% 
+  left_join(mcap_wb, by = c("country_code" = "code3_iso", "year")) %>% 
+  left_join(cw_region, by = c("country_code" = "code3_iso")) %>%
+  mutate(mcap_wb_pp = mcap_wb / population)
 
 # data coverage -----------------------------------------------------------
 
@@ -19,10 +42,12 @@ coverage <- combined %>%
   summarise(
     pop_cov = calc_coverage(population, population),
     gdppc_cov = calc_coverage(gdppc, population),
+    gdppc_wb_cov = calc_coverage(gdppc_wb, population),
     migrants_cov = calc_coverage(migrant_stock, population),
     companies_cov = calc_coverage(companies, population),
     obesity_cov = calc_coverage(obesity_rate, population),
-    homicide_cov = calc_coverage(homicide_rate, population)
+    homicide_cov = calc_coverage(homicide_rate, population),
+    mcap_wb_cov = calc_coverage(mcap_wb, population)
   )
 
 # funs --------------------------------------------------------------------
@@ -32,13 +57,15 @@ plot_current <- function(dat, x, y) {
   y <- sym(y)
   dat %>% 
     filter(!is.na(!!x), !is.na(!!y)) %>% 
-    ggplot(aes(!!x, !!y)) +
-    geom_point(aes(size = population), show.legend = FALSE, color = "#1f77b4", alpha = 0.8) + 
-    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", alpha = 0.2) + 
-    geom_text(aes(label = country_code), size = 3.5, hjust = 0, vjust = 0) +
+    ggplot(aes(!!x, !!y, color = region)) +
+    geom_point(aes(size = population), alpha = 0.8) + 
+    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", linetype = "dashed", se = FALSE) + 
+    ggrepel::geom_text_repel(aes(label = country_code, color = region), size = 3.5) +
     scale_x_log10() + 
     scale_y_log10() + 
     scale_size_continuous(range = c(1, 20)) +
+    scale_color_brewer(type = "qual", palette = "Set1") +
+    guides(size = "none") +
     theme_bw()
 }
 
@@ -47,14 +74,16 @@ plot_change <- function(dat, x, y) {
   y <- sym(y)
   dat %>% 
     filter(!is.na(!!x), !is.na(!!y)) %>% 
-    ggplot(aes(!!x, !!y)) +
-    geom_point(aes(size = population), show.legend = FALSE, color = "#1f77b4", alpha = 0.8) + 
-    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", alpha = 0.2) + 
-    geom_text(aes(label = country_code), size = 3.5, hjust = 0, vjust = 0) +
+    ggplot(aes(!!x, !!y, color = region)) +
+    geom_point(aes(size = population), alpha = 0.8) + 
+    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", linetype = "dashed", se = FALSE) + 
     geom_hline(aes(yintercept = 0), linetype = "dashed") +
+    ggrepel::geom_text_repel(aes(label = country_code, color = region), size = 3.5) +
     scale_x_log10() + 
     scale_y_continuous(breaks = seq(-100, 100, 2)) +
     scale_size_continuous(range = c(1, 20)) +
+    scale_color_brewer(type = "qual", palette = "Set1") +
+    guides(size = "none") +
     theme_bw()
 }
 
@@ -81,39 +110,15 @@ combined %>%
   plot_current("population", "gdppc")
 
 combined %>% 
-  filter(year == 2017, population >= 1e6) %>% 
-  plot_current("population", "migrant_stock")
-
-combined %>% 
-  filter(year == 2017, population >= 1e6) %>% 
-  plot_current("population", "migrants_pp")
-
-combined %>% 
-  filter(year == 2017, population >= 1e6, country_code != "ven") %>% 
-  plot_current("population", "market_cap")
-
-combined %>% 
-  filter(year == 2017, population >= 1e6, country_code != "ven") %>% 
-  mutate(market_cap_pp = market_cap / population) %>% 
-  plot_current("population", "market_cap_pp")
-
-combined %>% 
-  filter(year == 2016, population >= 1e6) %>% 
-  plot_current("population", "obesity_rate") +
-  scale_y_continuous(limits = c(0, NA))
-
-combined %>% 
-  filter(year == 2015, population >= 1e6) %>% 
-  plot_current("population", "homicide_rate")
-
-combined %>% 
-  filter(year == 2017, population >= 1e6) %>% 
-  plot_current("gdppc", "migrants_pp")
-
-combined %>% 
-  filter(year == 2017, population >= 1e6, country_code != "ven") %>% 
-  mutate(market_cap_pp = market_cap / population) %>% 
-  plot_current("gdppc", "market_cap_pp")
+  filter(year %in% 2013:2017, population >= 1e6) %>% 
+  group_by(country_code, region) %>% 
+  summarise(
+    population = mean(population),
+    gdppc_wb = mean(gdppc_wb, na.rm = TRUE),
+    mcap_wb_pp = mean(mcap_wb_pp, na.rm = TRUE)
+  ) %>% 
+  ungroup() %>% 
+  plot_current("gdppc_wb", "mcap_wb_pp")
 
 combined %>% 
   filter(year == 2016, population >= 1e6) %>% 
@@ -121,8 +126,15 @@ combined %>%
   scale_y_continuous(limits = c(0, NA))
 
 combined %>% 
-  filter(year == 2016, population >= 1e6) %>% 
-  plot_current("gdppc", "homicide_rate")
+  filter(year %in% 2008:2017, population >= 1e6) %>% 
+  group_by(country_code, region) %>% 
+  summarise(
+    population = mean(population),
+    gdppc_wb = mean(gdppc_wb, na.rm = TRUE),
+    homicide_rate = mean(homicide_rate, na.rm = TRUE)
+  ) %>% 
+  ungroup() %>% 
+  plot_current("gdppc_wb", "homicide_rate")
 
 # plot changes ------------------------------------------------------------
 
@@ -132,12 +144,7 @@ combined %>%
   plot_change("population", "population_aapc")
 
 combined %>% 
-  calc_aapc("gdppc") %>% 
+  calc_aapc("gdppc", n = 5) %>% 
   filter(year == 2017, population >= 1e6) %>% 
   plot_change("gdppc", "gdppc_aapc") + 
-  coord_cartesian(ylim = c(-3, 7))
-
-combined %>% 
-  calc_aapc("homicide_rate", n = 10) %>% 
-  filter(year == 2015, population >= 1e6, homicide_rate_aapc < 7) %>% 
-  plot_change("homicide_rate", "homicide_rate_aapc")
+  coord_cartesian(xlim = c(1e3, 1e5), ylim = c(-3, 7))
