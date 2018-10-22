@@ -59,8 +59,7 @@ plot_current <- function(dat, x, y) {
     filter(!is.na(!!x), !is.na(!!y)) %>% 
     ggplot(aes(!!x, !!y, color = region)) +
     geom_point(aes(size = population), alpha = 0.8) + 
-    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", linetype = "dashed", se = FALSE) + 
-    ggrepel::geom_text_repel(aes(label = country_code, color = region), size = 3.5) +
+    geom_smooth(method = "loess", span = 1, size = 0.5, color = "#1f77b4", se = FALSE) +
     scale_x_log10() + 
     scale_y_log10() + 
     scale_size_continuous(range = c(1, 20)) +
@@ -70,21 +69,9 @@ plot_current <- function(dat, x, y) {
 }
 
 plot_change <- function(dat, x, y) {
-  x <- sym(x)
-  y <- sym(y)
-  dat %>% 
-    filter(!is.na(!!x), !is.na(!!y)) %>% 
-    ggplot(aes(!!x, !!y, color = region)) +
-    geom_point(aes(size = population), alpha = 0.8) + 
-    geom_smooth(method = "lm", size = 0.5, color = "#1f77b4", linetype = "dashed", se = FALSE) + 
+  plot_current(dat, x, y) +
     geom_hline(aes(yintercept = 0), linetype = "dashed") +
-    ggrepel::geom_text_repel(aes(label = country_code, color = region), size = 3.5) +
-    scale_x_log10() + 
-    scale_y_continuous(breaks = seq(-100, 100, 2)) +
-    scale_size_continuous(range = c(1, 20)) +
-    scale_color_brewer(type = "qual", palette = "Set1") +
-    guides(size = "none") +
-    theme_bw()
+    scale_y_continuous(breaks = seq(-100, 100, 2))
 }
 
 calc_aapc <- function(df, vars, n = 10) {
@@ -144,7 +131,7 @@ combined %>%
   plot_change("population", "population_aapc")
 
 combined %>% 
-  calc_aapc("gdppc", n = 5) %>% 
-  filter(year == 2017, population >= 1e6) %>% 
-  plot_change("gdppc", "gdppc_aapc") + 
-  coord_cartesian(xlim = c(1e3, 1e5), ylim = c(-3, 7))
+  calc_aapc("gdppc", 37) %>% 
+  filter(year == 2017, population >= 1e6, gdppc < 1e5) %>% 
+  plot_change("gdppc", "gdppc_aapc") +
+  coord_cartesian(xlim = c(1e3, 1e5), ylim = c(-2, 6))
