@@ -7,12 +7,7 @@ library(readxl)
 library(stringr)
 library(tidyr)
 
-source("R/demographics.R")
-source("R/income.R")
-source("R/companies.R")
-source("R/migration.R")
-source("R/obesity.R")
-source("R/homicides.R")
+invisible(lapply(list.files("R", full.names = TRUE), source))
 
 file_cw   <- "data-raw/cw-countries3.csv"
 file_demo <- "https://esa.un.org/unpd/wpp/DVD/Files/1_Indicators%20(Standard)/CSV_FILES/WPP2017_TotalPopulationBySex.csv"
@@ -38,8 +33,15 @@ homicides    <- cr_homicides(file_homi, cw_countries)
 by_join <- c("country_code", "country_name", "year")
 
 vars_order <- c(
-  "country_code", "country_name", "year", "population", "gdppc", "migrants_pp",
-  "obesity_rate", "homicides_pp", "market_cap_pp"
+  "country_code",
+  "country_name",
+  "year",
+  "population",
+  "gdppc",
+  "migrants_pp",
+  "obesity_rate",
+  "homicides_pp",
+  "market_cap_pp"
 )
 
 combined <- demographics %>% 

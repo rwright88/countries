@@ -1,6 +1,6 @@
 # countries
 
-Country datasets
+Country datasets.
 
 ## Datasets structure
 
@@ -11,7 +11,7 @@ One row per country per year, with these columns:
 - year
 - statistics (any number of columns)
 
-## Completed datasets
+## Datasets
 
 Dataset      | Source
 -------------|-------
