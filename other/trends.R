@@ -24,7 +24,7 @@ plot_trends <- function(dat, x) {
 
 # plot trends -------------------------------------------------------------
 
-codes <- c("usa", "chn", "jpn", "deu")
+codes <- c("usa", "chn")
 
 combined %>% 
   filter(country_code %in% codes, year <= 2018) %>% 
